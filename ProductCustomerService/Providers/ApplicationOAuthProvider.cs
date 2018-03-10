@@ -33,11 +33,17 @@ namespace ProductCustomerService.Providers
 
             ApplicationUser user = await userManager.FindAsync(context.UserName, context.Password);
 
-            if (user == null)
-            {
-                context.SetError("invalid_grant", "The user name or password is incorrect.");
-                return;
-            }
+			AppUser appUser = null;
+			using (UnitOfWork uow = new UnitOfWork())
+			{
+				appUser=uow.Context.AppUsers.Where(x => x.UserName.ToUpper() == context.UserName.ToUpper()).FirstOrDefault();
+			}
+
+				if (user == null && appUser==null)
+				{
+					context.SetError("invalid_grant", "The user name or password is incorrect.");
+					return;
+				}
 
             ClaimsIdentity oAuthIdentity = await user.GenerateUserIdentityAsync(userManager,
                OAuthDefaults.AuthenticationType);
