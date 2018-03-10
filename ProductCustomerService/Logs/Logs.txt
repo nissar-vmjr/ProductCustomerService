@@ -1,0 +1,14 @@
+﻿
+User Login : nissar.vmjr@gmail.com
+Exception Message : Contact Number already exists
+Inner Exception : 
+Stack Trace :    at ProductCustomerService.BusinessLayer.BaseProvider.ThrowCustomException(String message)
+   at ProductCustomerService.BusinessLayer.BusinessProvider.ValidateIfContactNumberAlreadyExists(UnitOfWork uow, RqCustomer rqCustomer, RsCustomer response, String contactNo)
+   at ProductCustomerService.BusinessLayer.BusinessProvider.<SaveCustomerDetails>d__1.MoveNext()
+   at ProductCustomerService.BusinessLayer.BaseProvider.ThrowCustomException(String message)
+   at ProductCustomerService.BusinessLayer.BusinessProvider.ValidateIfContactNumberAlreadyExists(UnitOfWork uow, RqCustomer rqCustomer, RsCustomer response, String contactNo)
+   at ProductCustomerService.BusinessLayer.BusinessProvider.<SaveCustomerDetails>d__1.MoveNext()
+Date :1/30/2017 12:30:30 PM
+
+-----------------------------------------------------------------------------
+
