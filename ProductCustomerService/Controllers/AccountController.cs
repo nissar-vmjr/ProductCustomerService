@@ -19,6 +19,7 @@ using ProductCustomerService.Results;
 
 namespace ProductCustomerService.Controllers
 {
+    //AccountController controller
     [Authorize]
     [RoutePrefix("api/Account")]
     public class AccountController : ApiController
